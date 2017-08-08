@@ -1,0 +1,4 @@
+*.o
+ipcd_server
+ipcd_client
+.depend
