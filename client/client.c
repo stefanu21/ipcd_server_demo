@@ -41,8 +41,9 @@ int main(int argc, char *argv[])
 		struct connect *connect = NULL;
 		ipcd_obj = ipcd_obj_new((void **)&connect, MSG_CONNECT, sizeof(*connect));
 
-		connect->listen_to_type[0] = 1234;
-		connect->listen_to_type[1] = 5678;
+		connect->listen_to_type[0] = MSG_TEST;
+		connect->listen_to_type[1] = MSG_TEST2;
+		connect->pid = getpid();
 		snprintf(connect->client_name, sizeof(connect->client_name), "client-%d", getpid());
 	
 		ipcd_obj_send(fds, ipcd_obj);

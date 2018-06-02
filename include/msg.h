@@ -2,9 +2,11 @@
 #define MSG_H
 #include <time.h>
 
+#define ARRAYSIZE(a) (sizeof(a)/sizeof(a[0]))
+
 enum msg_type_t
 {
-        MSG_TEST,
+        MSG_TEST = 1,
         MSG_CONNECT,
         MSG_TEST2,
 };
@@ -19,6 +21,7 @@ struct connect
 {
         int listen_to_type[128];
         char client_name[32];
+   	 pid_t pid;
 };
 
 
